@@ -7,6 +7,9 @@ it can be facebook connector, twitter, workday, sales force,ftp connector or any
 article on connecting to workday connector
 http://www.ricston.com/blog/workday-connector-tutorial/
 example facebook connector - http://www.whishworks.com/blog/integration-with-facebook-using-mule-esb/
+
+linked in example connector - https://github.com/mulesoft/linkedin-connector/tree/master/demo/linkedinconnectorexample
+
 Components:
 ===========
 
