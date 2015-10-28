@@ -1,0 +1,39 @@
+<mule xmlns:facebook="http://www.mulesoft.org/schema/mule/facebook"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:wd-integration="http://www.mulesoft.org/schema/mule/wd-integration"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wd-integration http://www.mulesoft.org/schema/mule/wd-integration/current/mule-wd-integration.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/wd-connector http://www.mulesoft.org/schema/mule/wd-connector/current/mule-wd-connector.xsd
+http://www.mulesoft.org/schema/mule/facebook http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd">
+	<facebook:config-with-oauth name="Facebook"
+		consumerKey="1655954354675784" consumerSecret="1655954354675784"
+		doc:name="Facebook" scope="email,public_profile">
+		<facebook:oauth-callback-config domain="localhost"
+			localPort="1100" remotePort="1100" />
+	</facebook:config-with-oauth>
+	<!-- here goes your flows and configuration elements -->
+	<flow name="AutorizeFacebook" >
+		<http:inbound-endpoint exchange-pattern="request-response"
+			host="localhost" port="5555" doc:name="HTTP" path="facebookupdate" />
+		<facebook:authorize config-ref="Facebook" doc:name="Authorize" />
+		<choice doc:name="Choice">
+			<when expression="flowVars.OAuthAccessTokenId != null">
+				<logger message="Authorization Successful" level="INFO"
+					doc:name="Logger" />
+				<set-payload value="Facebook Authorization Successful"
+					doc:name="Set Payload" />
+			</when>
+			<otherwise>
+				<logger message="Authorization Failed" level="INFO" doc:name="Logger" />
+				<set-payload value="Facebook Authorization Failed"
+					doc:name="Set Payload" />
+			</otherwise>
+		</choice>
+	</flow>
+
+</mule>
