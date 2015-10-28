@@ -1,3 +1,8 @@
+
+mule Runtime:
+============
+https://docs.mulesoft.com/mule-user-guide/v/3.7/adding-community-runtime
+
 = Adding Community Runtime
 :keywords: installing, community runtime, ce, open source
 
@@ -33,20 +38,6 @@ image:36CEEEProject.png[36CEEEProject]
 
 If you are on a network with firewall restrictions, you may find that the Studio update sites are blocked and you are unable to download extensions. Allow the following sites on your firewall to allow Studio to connect to the update sites:
 
-_Allow on Firewall_
-
-link:http://studio.mulesoft.org/[http://studio.mulesoft.org]
-
-http://repository.mulesoft.org/connectors/releases/
-
-http://download.eclipse.org/technology/m2e/releases
-
-http://download.eclipse.org/eclipse/updates
-
-link:http://subclipse.tigris.org/[http://subclipse.tigris.org]
-
-http://findbugs.cs.umd.edu/eclipse/
-====
 
 == Change the Runtime of an Existing Project
 
@@ -60,9 +51,6 @@ http://findbugs.cs.umd.edu/eclipse/
 ====
 *The Community runtime does not support all the features available in Enterprise runtime.* If you switch runtimes from Enterprise to Community, be aware that some of your configurations may not be supported.
 ====
-+
-image:36DClickMuleProjXML.png[36DClickMuleProjXML]
-
 . If changing from Enterprise to Community, Studio displays a warning to advise that it may initiate updates to the namespace, and asks for your permission to proceed; click *Yes* to continue. 
 
 . Studio saves the change. Close the `mule-project.xml` file.
