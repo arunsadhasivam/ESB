@@ -4,6 +4,8 @@ http://blogs.mulesoft.com/
 connector:
 ==========
 it can be facebook connector, twitter, workday, sales force,ftp connector or any other
+article on connecting to workday connector
+http://www.ricston.com/blog/workday-connector-tutorial/
 Components:
 ===========
 
