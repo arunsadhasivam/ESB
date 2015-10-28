@@ -9,6 +9,7 @@ http://www.ricston.com/blog/workday-connector-tutorial/
 example facebook connector - http://www.whishworks.com/blog/integration-with-facebook-using-mule-esb/
 
 linked in example connector - https://github.com/mulesoft/linkedin-connector/tree/master/demo/linkedinconnectorexample
+http://www.mulesoft.org/connectors/linkedin-connector-3.3.2%3B3.4.0
 
 Components:
 ===========
