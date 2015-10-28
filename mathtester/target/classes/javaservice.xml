@@ -1,0 +1,14 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd">
+	<http:listener-config name="listener-config" host="localhost"
+		port="8082" />
+	<flow name="helloService">
+		<http:listener config-ref="listener-config" path="math" />
+		<cxf:simple-service serviceClass="com.math.test.MathIntf" />
+		<component class="com.math.test.MathTester" />
+	</flow>
+</mule>
