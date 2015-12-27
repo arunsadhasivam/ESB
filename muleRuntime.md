@@ -1,4 +1,13 @@
 
+To use Mule, either use Any point studio , or Mule standalone runtime(without Anypoint Studio) , or MMC (mule enterprise management console)
+1)Anypoint studio-
+2)Mule stand alone - https://developer.mulesoft.com/download-mule-esb-runtime
+3)https://www.mulesoft.com/dl/mmc
+
+
+
+
+
 mule Runtime:
 ============
 https://docs.mulesoft.com/mule-user-guide/v/3.7/adding-community-runtime
