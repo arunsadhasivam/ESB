@@ -4,7 +4,38 @@ To use Mule, either use Any point studio , or Mule standalone runtime(without An
 2)Mule stand alone - https://developer.mulesoft.com/download-mule-esb-runtime
 3)https://www.mulesoft.com/dl/mmc
 
+Mule Stan Alone -Mule Runtime
+=============================
 
+When launched, Mule looks for a configuration file called
+mule-config.xml, but you can include a file name (and path) to load
+Mule with a different file of your own.
+"%MULE_HOME%\bin\mule.bat" -config bin/mule-config.xml
+
+Mule can be loaded by running it and using any one of its command-line
+arguments. The main parameter to use is –config
+
+Mule can be launched programmatically by using the org.mule.
+MuleServer class. This class needs to be created; its constructor accepts a
+comma-separated list of configuration files that you want to use, as shown
+here:
+MuleServer server = new MuleServer ("myConfig.xml,myOtherConfig.xml");
+server.start (true);
+
+
+Installing Mule as a Service (or Daemon)
+
+Apart from being run in a stand-alone fashion, Mule can also be installed as
+a service on Windows or as a daemon on Unix.
+On Windows, use the install parameter shown here:
+mule install –config myConfig.xml
+This can be reversed by using the remove command:
+mule remove
+Once installed, Mule can be started, stopped, or restarted. In each case, the
+config parameter will accept a comma-separated list of configuration files
+to use:
+mule start | restart | stop –config myConfig.xml
+Additionally, you can use the following Windows net command to
 
 
 
