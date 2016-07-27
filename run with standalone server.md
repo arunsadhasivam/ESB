@@ -61,6 +61,7 @@ We can now click mule.bat  to start our standalone server
 command:
 ========
 mule -app <<application name>>
+
 mule -app mule_basics 
 
 mule_basics is created zip file name or application name
