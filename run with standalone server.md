@@ -53,13 +53,15 @@ TO RUN MUle with integrating with Mule Standalone Server
 mule -app mule_basics
 To deploy this application in Mule Standalone we need to create a deployable Zip file
 and we can create it by right click on the Mule application, and then select Export option, 
-and then select Anypoint studio project to Mule deployable Archive option from the menu as given below:
+and then select Anypoint studio project to Mule deployable Archive option from the menu in Any point studio.
 
 Once done , we need to start our mule standalone server. We need to come into bin folder 
 under Mule Standalone folder, and there we will find mule.bat ( for windows )
 We can now click mule.bat  to start our standalone server
 command:
-======
+========
+mule -app <<application name>>
 mule -app mule_basics 
+
 mule_basics is created zip file name or application name
 
