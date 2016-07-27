@@ -14,16 +14,23 @@ Copy the contents of the Mule lib folder with all its subdirectories – except 
 of your Tomcat home directory. Do not flatten the directory structure.
 Copy the mule-module-tomcat-<version>.jar file to the mule-libs/mule/ directory in your Tomcat home directory.
 Copy the following libraries from your Mule lib/boot/ directory to your Tomcat `mule-libs/opt/`directory:
+
 1)commons-cli-1.2.jar 
 
 2)jcl-over-slf4j-1.7.7.jar
 
 3)log4j-jcl-2.1.jar
+
 4)slf4j-api-1.7.7.jar
+
 5)disruptor-3.3.0.jar
+
 6)wrapper-3.5.26.jar
+
 7)log4j-slf4j-impl-2.1.jar
+
 8)log4j-api-2.1.jar
+
 9)log4j-core-2.1.jar
 
 In the Tomcat conf/catalina.properties file, add the following to common.loader 
