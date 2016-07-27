@@ -73,5 +73,5 @@ mule -app {application name}
 
 mule -app mule_basics 
 
-mule_basics is created zip file name or application name
+mule_basics.zip is  created zip file name or application name
 
