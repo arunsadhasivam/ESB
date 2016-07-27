@@ -60,7 +60,7 @@ under Mule Standalone folder, and there we will find mule.bat ( for windows )
 We can now click mule.bat  to start our standalone server
 command:
 ========
-mule -app <<application name>>
+mule -app {application name}
 
 mule -app mule_basics 
 
