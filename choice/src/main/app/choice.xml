@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" basePath="/hello" doc:name="HTTP Listener Configuration"/>
+    <flow name="choiceFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/" responseStreamingMode="ALWAYS" metadata:id="875f9794-3d63-4e24-9fc4-8219c4d71f0f" doc:name="HTTP"/>
+        <set-session-variable variableName="env" value="#[message.inboundProperties.'http.method']" doc:name="Session Variable"/>
+        <response>
+            <set-payload value="Response Method : #[sessionVars.'env']  called!!" doc:name="Set Payload"/>
+        </response>
+        <choice doc:name="Choice">
+            <when expression="#[sessionVars.env=='GET']">
+                <set-payload value="#[message.payload]" doc:name="GET"/>
+                <logger message="#[sessionVars.env] -1 method called !!!!" level="INFO" doc:name="Logger"/>
+            </when>
+            <when expression="#[sessionVars.env=='POST']">
+                <set-payload value="#[message.payload]" doc:name="POST"/>
+                <logger message="#[sessionVars.env] -2 method called !!!!" level="INFO" doc:name="Logger"/>
+            </when>
+            <otherwise>
+                <set-payload value="#[message.payload]" doc:name="Default"/>
+                <logger message="#[sessionVars.env] - default method called !!!!" level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>
+    </flow>
+</mule>

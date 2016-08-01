@@ -1,0 +1,15 @@
+{
+    "inputMessageMetadata": {},
+    "outputMessageMetadata": {
+        "sessionVariables": {
+            "env": {
+                "dataType": "UNKNOWN",
+                "metaDataModelPropertiesManager": {
+                    "properties": []
+                }
+            }
+        }
+    },
+    "id": "875f9794-3d63-4e24-9fc4-8219c4d71f0f",
+    "version": "5.2.0.0"
+}
